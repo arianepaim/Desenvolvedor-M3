@@ -23,21 +23,21 @@ function getRoupas(url) {
   return request.responseText;
 }
 
-const filter = [...document.querySelectorAll(".title select")];
-filter.forEach(function (e) {
+const filtroOrdem = [...document.querySelectorAll(".title select")];
+filtroOrdem.forEach(function (e) {
   e.addEventListener("click", function () {
     ordens = e.value;
     bundle();
   });
 });
 
-const priceProduct = document.querySelectorAll(".price input");
-priceProduct.forEach(function (e) {
-  const priceValor = e.getAttribute("data-valor");
+const precoProduto = document.querySelectorAll(".price input");
+precoProduto.forEach(function (e) {
+  const valor = e.getAttribute("data-valor");
   e.addEventListener("click", function () {
     const checked = e.checked;
     if (checked) {
-      precos = priceValor;
+      precos = valor;
     } else {
       precos = null;
     }
@@ -45,15 +45,15 @@ priceProduct.forEach(function (e) {
   });
 });
 
-const colorsPickers = document.querySelectorAll(".colors input");
-colorsPickers.forEach(function (e) {
-  const colorName = e.getAttribute("data-cor");
+const pegarCores = document.querySelectorAll(".colors input");
+pegarCores.forEach(function (e) {
+  const cor = e.getAttribute("data-cor");
   e.addEventListener("click", function () {
     const checked = e.checked;
     if (checked) {
-      cores.push(colorName);
+      cores.push(cor);
     } else {
-      const colorIndex = cores.indexOf(colorName);
+      const colorIndex = cores.indexOf(cor);
       cores.splice(colorIndex, 1);
     }
     console.log(cores);
@@ -61,15 +61,15 @@ colorsPickers.forEach(function (e) {
   });
 });
 
-const sizeProduct = document.querySelectorAll(".size input");
-sizeProduct.forEach(function (e) {
-  const sizeLetra = e.getAttribute("data-tamanho");
+const tamanhoProduto = document.querySelectorAll(".size input");
+tamanhoProduto.forEach(function (e) {
+  const tamanho = e.getAttribute("data-tamanho");
   e.addEventListener("click", function () {
     const checked = e.checked;
     if (checked) {
-      tamanhos.push(sizeLetra);
+      tamanhos.push(tamanho);
     } else {
-      const sizeIndex = tamanhos.indexOf(sizeLetra);
+      const sizeIndex = tamanhos.indexOf(tamanho);
       tamanhos.splice(sizeIndex, 1);
     }
     console.log(tamanhos);
@@ -77,7 +77,7 @@ sizeProduct.forEach(function (e) {
   });
 });
 
-function criaCard(product) {
+function criarCard(produto) {
   const div = document.createElement("div");
   const image = document.createElement("img");
   const name = document.createElement("h2");
@@ -85,26 +85,24 @@ function criaCard(product) {
   const parcelamento = document.createElement("h4");
   const link = document.createElement("a");
 
-  image.src = product.image;
-  name.innerHTML = product.name;
+  image.src = produto.image;
+  name.innerHTML = produto.name;
   price.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
-  }).format(product.price);
-  parcelamento.innerHTML = `Até ${product.parcelamento.slice(0, 1)}x
+  }).format(produto.price);
+  parcelamento.innerHTML = `Até ${produto.parcelamento.slice(0, 1)}x
     ${new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
-    }).format(product.parcelamento.slice(1))}`;
+    }).format(produto.parcelamento.slice(1))}`;
   link.innerHTML = "COMPRAR";
-  link.setAttribute("href", `/products?id=${product.id}`);
 
   div.appendChild(image);
   div.appendChild(name);
   div.appendChild(price);
   div.appendChild(parcelamento);
   div.appendChild(link);
-
   return div;
 }
 
@@ -155,23 +153,18 @@ function bundle() {
   const botaoCarregarMais = [...document.querySelectorAll(".carregarMais")];
   botaoCarregarMais.forEach(function (e) {
     e.addEventListener("click", function () {
-      end = products.length;
-    
+      end = produtos.length;
+
       bundle();
     });
   });
 
   let data = getRoupas(url);
-  let products = JSON.parse(data);
-  let produto = document.getElementById("produto");
+  let produtos = JSON.parse(data);
+  let produto = document.querySelector("#produto");
   produto.innerHTML = "";
-//   products.forEach((e) => {    
-//     let div = criaCard(e);
-//     produto.appendChild(div);
-//   });
-// }
-for (var i = 0; i < end; i++) {
-  let div = criaCard(products[i]);
-  produto.appendChild(div);
-}
+  for (let i = 0; i < end; i++) {
+    let div = criarCard(produtos[i]);
+    produto.appendChild(div);
+  }
 }
