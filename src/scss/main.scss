@@ -1,1 +1,302 @@
 @import "reset";
+
+.header-container {
+    background-color: #fff;
+    border-bottom: 2px solid #C7C7C7;
+
+    header {
+        margin: 1rem 10rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 440px) {
+            margin: 1rem;
+
+        }
+
+        .icon {
+            width: 17px;
+            height: 20px;
+
+            @media screen and (max-width: 440px) {
+                margin-right: 1rem;
+
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem 10rem;
+    align-items: center;
+
+    @media screen and (max-width: 440px) {
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+    }
+
+    select {
+        width: 142px;
+        height: 42px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+
+        @media screen and (max-width: 440px) {
+            display: none;
+        }
+
+    }
+
+    .btn-mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 440px) {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .btn-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 90%;
+
+            button {
+                width: 50%;
+                height: 2rem;
+                margin-top: 1rem;
+                color: #666666;
+                background-color: transparent;
+                border-color: #666666;
+
+            }
+
+        }
+    }
+}
+
+.body-container {
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 440px) {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .search-container {
+        margin: 0 5rem 0 10rem;
+        width: 20%;
+        flex-direction: column;
+
+        .colors {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            margin-bottom: 1rem;
+
+            ul {
+                margin-top: 0.7rem;
+
+                li {
+                    margin: 2px 0;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .size {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            margin-bottom: 1rem;
+
+            .toggle-wrapper {
+                padding: 1.5rem 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .toggle-input:checked~.slider button {
+                font-weight: 500;
+                color: black;
+                border: 1px solid #00C0EE;
+                ;
+            }
+
+            .slider {
+                background: white;
+                width: 32px;
+                height: 32px;
+                padding: 0.2rem;
+
+                .button {
+                    width: 32px;
+                    height: 32px;
+                    background: white;
+                    pointer-events: none;
+                    border: 1px solid #C7C7C7;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #00000080;
+                    padding-left: 0;
+                    padding-right: 0;
+
+
+                }
+            }
+        }
+
+        .price {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            margin-bottom: 1rem;
+
+            @media screen and (max-width: 440px) {
+                display: none;
+            }
+
+            ul {
+                margin-top: 0.7rem;
+
+                li {
+                    margin: 2px 0;
+                    font-size: 14px;
+
+                }
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            display: none;
+
+        }
+
+    }
+
+    #produto {
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: 10rem;
+        width: 80%;
+
+        @media screen and (max-width: 440px) {
+            width: 100%;
+            padding: 0;
+            margin: 0.5rem;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 2rem 2rem 1rem;
+            width: 23%;
+
+            @media screen and (max-width: 440px) {
+                width: 40%;
+                margin: 0.5rem;
+                justify-content: space-between;
+
+            }
+        }
+
+        h2 {
+            margin: 0.4rem 0 0 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        h3 {
+
+            margin: 1rem 0 0 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        h4 {
+            margin: 0.3rem 0 0 0;
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+        }
+
+        a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Open Sans';
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+
+}
+
+.button-pag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+
+    .carregarMais {
+        width: 175px;
+        height: 35px;
+        background: #00C0EE;
+        color: white;
+        border: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+}
+
+
+.footer {
+    width: 100%;
+    height: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 10px;
+    }
+}

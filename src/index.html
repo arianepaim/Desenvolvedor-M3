@@ -1,19 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <div class="header-container">
+      <header>
+        <div class="logo">
+          <img src="./img/logo-m3.png" alt="Logo da M3" />
+        </div>
+        <i><img class="icon" src="./img/bag.svg" alt="Bolsa de compras" /></i>
+      </header>
+    </div>
+    <div class="title">
+      <h1>Blusas</h1>
+      <select>
+        <option value="" selected hidden>Ordenar por:</option>
+        <option value="date">Mais recentes</option>
+        <option value="menor">Menor Preço</option>
+        <option value="price">Maior Preço</option>
+      </select>
+      <div class="btn-mobile">
+        <button class="mobile-filter">FILTRO</button>
+        <button class="mobile-order">ORDENAR</button>
+      </div>
+    </div>
+    <div class="body-container">
+      <div class="search-container">
+        <div class="colors">
+          <label for="Cores">CORES</label>
+          <ul>
+            <li><input data-cor="Amarelo" type="checkbox" />Amarelo</li>
+            <li><input data-cor="Azul" type="checkbox" />Azul</li>
+            <li><input data-cor="Branco" type="checkbox" />Branco</li>
+            <li><input data-cor="Cinza" type="checkbox" />Cinza</li>
+            <li><input data-cor="Laranja" type="checkbox" />Laranja</li>
+            <li><input data-cor="Verde" type="checkbox" />Verde</li>
+            <li><input data-cor="Vermelho" type="checkbox" />Vermelho</li>
+            <li><input data-cor="Preto" type="checkbox" />Preto</li>
+            <li><input data-cor="Rosa" type="checkbox" />Rosa</li>
+            <li><input data-cor="Vinho" type="checkbox" />Vinho</li>
+          </ul>
+        </div>
+        <div class="size">
+          <label for="Tamanhos">TAMANHOS</label>
+          <div class="toggle-wrapper">
+            <label>
+              <input
+                data-tamanho="P"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">P</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="M"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">M</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="G"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">G</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="GG"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">GG</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="U"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">U</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="36"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">36</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="38"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">38</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="40"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">40</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="42"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">42</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="44"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">44</button>
+              </div>
+            </label>
+            <label>
+              <input
+                data-tamanho="46"
+                type="checkbox"
+                hidden
+                class="toggle-input"
+              />
+              <div class="slider">
+                <button class="button">46</button>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="price">
+          <label for="Preço">FAIXA DE PREÇO</label>
+          <ul>
+            <li>
+              <input type="checkbox" name="price" data-valor="0" />de R$ 0 até
+              R$50
+            </li>
+            <li>
+              <input type="checkbox" name="price" data-valor="1" />de R$ 51 até
+              R$150
+            </li>
+            <li>
+              <input type="checkbox" name="price" data-valor="2" />de R$ 151 até
+              R$300
+            </li>
+            <li>
+              <input type="checkbox" name="price" data-valor="3" />de R$ 301 até
+              R$500
+            </li>
+            <li>
+              <input type="checkbox" name="price" data-valor="4" />a partir de
+              R$500
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="produto"></div>
+    </div>
+    <div class="button-pag">
+      <button class="carregarMais" type="submit">CARREGAR MAIS</button>
+    </div>
+    <footer>
+      <div class="footer">
+        <p>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</p>
+      </div>
+    </footer>
+  </body>
 
-<body>
-
-</body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
-
+  <script src="bundle.js"></script>
 </html>
